@@ -43,13 +43,13 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-slider">
-            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af2ac3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1563191911-e65f8655ebf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1565043666747-69f6646db940?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+            <div class="slide active" style="background-image: url('assets/photo/BackGround_1.png');"></div>
+            <div class="slide" style="background-image: url('assets/photo/Background_2.png');"></div>
+            <div class="slide" style="background-image: url('assets/photo/Background_3.png');"></div>
+            <div class="slide" style="background-image: url('assets/photo/Background_4.png');"></div>
+            <div class="slide" style="background-image: url('assets/photo/Background_5.png');"></div>
+            <div class="slide" style="background-image: url('assets/photo/Background_6.png');"></div>
+            <!-- <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1565043666747-69f6646db940?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div> -->
         </div>
         <div class="hero-content">
             <h1>Leading the Future of Autonomous Robotics</h1>
@@ -67,7 +67,7 @@
                 <span class="dot" data-slide="3"></span>
                 <span class="dot" data-slide="4"></span>
                 <span class="dot" data-slide="5"></span>
-                <span class="dot" data-slide="6"></span>
+                <!-- <span class="dot" data-slide="6"></span> -->
             </div>
         </div>
     </section>
@@ -119,7 +119,7 @@
             <div class="products-grid">
                 <div class="product-card">
                     <div class="product-icon">
-                        <i class="fas fa-robot"></i>
+                        <img src="assets/photo/product_robot.jpg" alt="Robot Icon" style="width:100px; height:80px;">
                     </div>
                     <h3>Autonomous Mobile Robots (AMR)</h3>
                     <p>Advanced AMR systems for hospitals, hotels, restaurants, and warehouses with autonomous navigation capabilities.</p>
@@ -132,7 +132,7 @@
                 
                 <div class="product-card">
                     <div class="product-icon">
-                        <i class="fas fa-network-wired"></i>
+                        <img src="assets/photo/multiple.png" alt="network" style="width:100px; height:80px;">
                     </div>
                     <h3>Multi-Robot Control Systems</h3>
                     <p>Sophisticated control systems for managing multiple robots in warehouse and industrial environments.</p>
@@ -145,7 +145,7 @@
                 
                 <div class="product-card">
                     <div class="product-icon">
-                        <i class="fas fa-microchip"></i>
+                        <img src="assets/photo/microchip.jpg" alt="chip" style="width:100px; height:80px;">
                     </div>
                     <h3>Hardware Components</h3>
                     <p>High-quality robot accessories and micro-controller technologies for industrial applications.</p>
@@ -158,7 +158,7 @@
                 
                 <div class="product-card">
                     <div class="product-icon">
-                        <i class="fas fa-dog"></i>
+                       <img src="assets/photo/product_robotdog.png" alt="RobotDog Icon" style="width:80px; height:80px;">
                     </div>
                     <h3>Cyber Dog (Coming Soon)</h3>
                     <p>Advanced robotic companion with AI capabilities, planned for release within two years.</p>
@@ -262,7 +262,7 @@
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h4>Location</h4>
-                            <p>Yangon, Myanmar</p>
+                            <p>South Oakkalapa Township, Yangon, Myanmar</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -276,12 +276,12 @@
                         <i class="fas fa-phone"></i>
                         <div>
                             <h4>Phone</h4>
-                            <p>+95 (0) 123 456 789</p>
+                            <p>+95 9250074005, +95 250074008</p>
                         </div>
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="contactForm">
+                    <form action="https://formspree.io/f/xrbyklnr" method="POST">
                         <div class="form-group">
                             <input type="text" id="name" name="name" placeholder="Your Name" required>
                         </div>
@@ -296,6 +296,7 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
+                    <div id="form-status"></div>
                 </div>
             </div>
         </div>
@@ -347,5 +348,6 @@
     </footer>
 
     <script src="script.js"></script>
+    
 </body>
 </html>
