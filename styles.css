@@ -85,6 +85,65 @@ body {
     color: var(--primary-color);
 }
 
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dropdown-toggle i {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.dropdown.active .dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--white);
+    box-shadow: 0 10px 30px rgba(26, 54, 93, 0.15);
+    border-radius: 8px;
+    padding: 0.5rem 0;
+    min-width: 250px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    border: 1px solid rgba(26, 54, 93, 0.1);
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown.active .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.dropdown-item:hover {
+    background: var(--bg-light);
+    color: var(--primary-color);
+    border-left-color: var(--accent-color);
+}
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -616,6 +675,29 @@ body {
         margin: 1rem 0;
     }
     
+    /* Mobile Dropdown */
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        background: var(--bg-light);
+        margin: 0.5rem 0;
+        border-radius: 4px;
+        display: none;
+    }
+    
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+    
+    .dropdown-item {
+        padding: 0.5rem 1rem;
+        margin: 0.25rem 0;
+    }
+    
     .hero-content {
         text-align: center;
         gap: 2rem;
@@ -640,7 +722,190 @@ body {
     }
 }
 
-@media (max-width: 480px) {
+/* Course Pages Styles */
+.course-hero {
+    background: var(--gradient);
+    color: var(--white);
+    padding: 120px 0 80px;
+    text-align: center;
+}
+
+.course-hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.course-hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.course-highlights {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.highlight {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+}
+
+.highlight i {
+    font-size: 1.2rem;
+}
+
+/* Course Details */
+.course-details {
+    padding: 80px 0;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.details-content h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.details-content h3 {
+    color: var(--primary-color);
+    margin: 2rem 0 1rem 0;
+}
+
+.learning-list,
+.career-list,
+.target-audience {
+    list-style: none;
+    margin: 1rem 0;
+}
+
+.learning-list li,
+.career-list li,
+.target-audience li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.learning-list li::before,
+.career-list li::before,
+.target-audience li::before {
+    content: "✓";
+    color: var(--accent-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Course Info Card */
+.course-info-card {
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(26, 54, 93, 0.1);
+    position: sticky;
+    top: 100px;
+}
+
+.course-info-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.info-item {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(26, 54, 93, 0.1);
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-item strong {
+    color: var(--primary-color);
+}
+
+.course-info-card .btn {
+    width: 100%;
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.additional-info {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--accent-color);
+}
+
+.additional-info h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.additional-info ul {
+    list-style: none;
+}
+
+.additional-info li {
+    padding: 0.25rem 0;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.additional-info li::before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+/* Certification Modules */
+.certification-modules {
+    margin: 2rem 0;
+}
+
+.module {
+    background: var(--white);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(26, 54, 93, 0.1);
+    border-left: 4px solid var(--accent-color);
+}
+
+.module h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.module h4 i {
+    color: var(--accent-color);
+}
+
+.duration {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+@media (max_width: 480px) {
     .hero-content h1 {
         font-size: 2rem;
     }
@@ -653,4 +918,277 @@ body {
     .services-grid {
         grid-template-columns: 1fr;
     }
+    
+    /* Course Page Mobile Styles */
+    .course-hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .course-highlights {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .details-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .course-info-card {
+        position: static;
+    }
+}
+
+/* Product Pages Styles */
+.product-hero {
+    background: var(--gradient);
+    color: var(--white);
+    padding: 120px 0 80px;
+    text-align: center;
+}
+
+.product-hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.product-hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.product-highlights {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.product-details {
+    padding: 80px 0;
+}
+
+.application-modules .module,
+.feature-list {
+    margin: 1rem 0;
+}
+
+.feature-list {
+    list-style: none;
+    margin-left: 1rem;
+}
+
+.feature-list li {
+    padding: 0.25rem 0;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.feature-list li::before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+.roi-benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.benefit-card {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(26, 54, 93, 0.1);
+    text-align: center;
+    border-top: 3px solid var(--accent-color);
+}
+
+.benefit-stat {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin: 0.5rem 0;
+}
+
+/* Developer Pages Styles */
+.developer-hero {
+    background: var(--gradient);
+    color: var(--white);
+    padding: 120px 0 80px;
+    text-align: center;
+}
+
+.developer-hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.developer-hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.developer-highlights {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.developer-resources {
+    padding: 80px 0;
+    background: var(--bg-light);
+}
+
+.resources-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.resource-category h2 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.resource-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.resource-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(26, 54, 93, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+}
+
+.resource-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.resource-card ul {
+    list-style: none;
+    margin: 1rem 0;
+}
+
+.resource-card li {
+    padding: 0.25rem 0;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.resource-card li::before {
+    content: "✓";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+.developer-community {
+    padding: 80px 0;
+}
+
+.developer-community h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+}
+
+.community-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.community-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(26, 54, 93, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.community-card:hover {
+    transform: translateY(-5px);
+}
+
+.community-card i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.developer-support {
+    padding: 80px 0;
+    background: var(--bg-light);
+}
+
+.support-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.support-options {
+    margin-top: 2rem;
+}
+
+.support-option {
+    margin-bottom: 2rem;
+}
+
+.support-option h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.support-contact {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(26, 54, 93, 0.1);
+}
+
+.developer-contact-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.developer-contact-form input,
+.developer-contact-form select,
+.developer-contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.developer-contact-form input:focus,
+.developer-contact-form select:focus,
+.developer-contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
 }
